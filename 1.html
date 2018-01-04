@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 
+	Написать приложение для работы с REST сервисом http://fecore.net.ua/rest/, реализовать следующий функционал:
+
+	функция getUsers должна получать текущий список всех пользователей в БД.
+
+	функция addUser должна записывать в БД юзера с полями name и score.
+
+	функция removeUser должна удалять из БД юзера по id.
+
+	функция updateUser должна обновлять данные пользователя по id.
+
+	Сделать минимальный графический интерфейс в виде панели с полями и кнопками, а так же панелью для вывода результатов операций с REST сервисом.
+ -->
+ 
+	<div class="wrapper">
+
+		<div><button id="btnGetUsers">Get users</button></div>
+		<table class="userTable">
+			<thead>
+			    <tr>
+				    <th>ID</th>
+				    <th>Name</th>
+				    <th>Score</th>
+			    </tr>
+			</thead>
+			<tbody id="userTableBody"></tbody>
+		</table>
+
+		<script type="text/template" id="table-row">
+			<tr scope="row">
+			    <td><%- id%></td>
+			    <td><%- name%></td>
+			    <td><%- score%></td>
+			</tr>
+		</script>
+
+		<div><button id="btnAddUser">Add user</button></div>
+		<input type="text" id="userId" placeholder="new id"><input type="text" id="userName" placeholder="new name"><input type="text" id="userScore" placeholder="new score">
+		<div><button id="btnRemoveUser">Remove user</button></div>
+		<input type="text" id="removeId" placeholder="delete id">
+		<div><button id="btnUpdateUser">Update user</button></div>
+		<input type="text" id="changeUserId" placeholder="update id"><input type="text" id="changeUserName" placeholder="update name"><input type="text" id="changeUserScore" placeholder="update score">
+
+	</div>
+
+
+<script src="lodash.js"></script>
+<script src="1.js"></script>
+</body>
+</html>
